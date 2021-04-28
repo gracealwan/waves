@@ -6,6 +6,8 @@ import ProfileScreen from './ProfileScreen';
 import Notifications from './Notifications';
 import EditProfileScreen from './EditProfileScreen';
 import AddFriendsScreen from './AddFriendsScreen';
+import CardExpandedScreen from './CardExpandedScreen';
+
 const Stack = createStackNavigator();
 
 
@@ -16,6 +18,7 @@ function ProfileNavScreen({navigation}) {
       <Stack.Screen name="Notifications" component={Notifications} />
       <Stack.Screen name="Edit" component={EditProfileScreen} />
       <Stack.Screen name="Add" component={AddFriendsScreen} />
+      <Stack.Screen name="Wave" component={CardExpandedScreen} />
     </Stack.Navigator>
   );
 }
