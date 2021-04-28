@@ -18,10 +18,10 @@ const DATA = [
     },
   ];
 
-function CompactList({navigation, route}) {
+function CompactList({navigation}) {
     const renderItem = ({item}) => {
         return (
-          <WaveCardCompact item={item} navigation={navigation} route={route}/>
+          <WaveCardCompact item={item} navigation={navigation} />
         );
       };
       return (

@@ -3,10 +3,10 @@ import React from 'react';
 import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 import CompactList from '../components/CompactList';
 
-function FeedList({navigation, route}) {
+function FeedList({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
-            <CompactList navigation={navigation} route={route}/>
+            <CompactList navigation={navigation} />
         </SafeAreaView>
     );
 }
