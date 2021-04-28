@@ -26,35 +26,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './screens/HomeScreen';
+import {Provider as PaperProvider} from 'react-native-paper';
 
-// const Section = ({children, title}): Node => {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// };
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import ProfileScreen from './screens/ProfileScreen';
+import ProfileNavScreen from './screens/ProfileNavScreen';
 import FeedScreen from './screens/FeedScreen';
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -72,44 +48,29 @@ const App = () => {
 
   const ProfileRoute = () => (
     <NavigationContainer independent={true}>
-      <ProfileScreen />
+      <ProfileNavScreen />
     </NavigationContainer>
-  )
+  );
   const FeedRoute = () => (
     <NavigationContainer independent={true}>
       <FeedScreen />
     </NavigationContainer>
   );
   return (
-    <NavigationContainer>
-      <StatusBar barStyle={'dark-content'} />
+    <PaperProvider>
+      <NavigationContainer>
+        <StatusBar barStyle={'dark-content'} />
 
-      <Tab.Navigator tabBarPosition='bottom' initialRouteName='Home'>
-        <Tab.Screen name="Feed" component={FeedRoute} />
-        <Tab.Screen name="Home" component={HomeRoute} />
-        <Tab.Screen name="Profile" component={ProfileRoute}/>
-      </Tab.Navigator>
-    </NavigationContainer>
+        <Tab.Navigator tabBarPosition="bottom" initialRouteName="Home">
+          <Tab.Screen name="Feed" component={FeedRoute} />
+          <Tab.Screen name="Home" component={HomeRoute} />
+          <Tab.Screen name="Profile" component={ProfileRoute} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default App;
