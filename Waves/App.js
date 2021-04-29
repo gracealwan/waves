@@ -19,13 +19,14 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {NavigationContainer} from '@react-navigation/native';
 import ProfileNavScreen from './screens/ProfileNavScreen';
 import FeedScreen from './screens/FeedScreen';
+import HomeNavScreen from './screens/HomeNavScreen';
 const App = () => {
   // const isDarkMode = useColorScheme() === 'dark';
 
   const Tab = createMaterialTopTabNavigator();
   const HomeRoute = () => (
     <NavigationContainer independent={true}>
-      <HomeScreen />
+      <HomeNavScreen />
     </NavigationContainer>
   );
 
