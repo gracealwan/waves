@@ -5,8 +5,8 @@ import {StyleSheet, View, Text} from 'react-native';
 function ProfileDataItem({number, text}) {
     return (
       <View style={styles.box}>
-        <Text>{number}</Text>
-        <Text>{text}</Text>
+        <Text style={styles.number}>{number}</Text>
+        <Text style={styles.text}>{text}</Text>
       </View>
     );
   }
@@ -34,8 +34,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-
     width: '30%',
+  },
+  number: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "black",
+  },
+  text: {
+    fontSize: 12,
+    color: "rgba(60, 60, 67, 0.6);",
   },
 });
 export default ProfileInfoRow;
