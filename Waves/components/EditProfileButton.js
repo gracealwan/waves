@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 
 import {Button} from 'react-native-paper';
+import { DARK_GRAY, LIGHT_GRAY, MED_GRAY } from '../constants/theme';
 
 
 function EditProfileButton({navigation}) {
@@ -12,7 +13,7 @@ function EditProfileButton({navigation}) {
           mode="outlined"
           compact
           onPress={() => navigation.push('Edit')}>
-          Edit Profile
+            <Text style={styles.inner}>Edit Profile</Text>
         </Button>
     );
 }
@@ -20,7 +21,12 @@ function EditProfileButton({navigation}) {
 const styles = StyleSheet.create({
     button: {
         alignSelf: 'flex-end',
+        margin: 10,
+        borderColor: MED_GRAY,
       },
+      inner: {
+        color: DARK_GRAY,
+      }
 });
 
 export default EditProfileButton;

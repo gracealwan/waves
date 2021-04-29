@@ -5,9 +5,8 @@ import {Card} from 'react-native-paper';
 import { TabRouter } from '@react-navigation/routers';
 
 function WaveCardCompact({item, navigation}) {
-    item = item === undefined ? {title: 'placeholder'} : item;
   return (
-    <Card style={styles.card} onPress={() => navigation?.push("Wave")}>
+    <Card style={styles.card} onPress={() => navigation?.push("Wave", {item: item})}>
       <Card.Title title={item.title} />
     </Card>
   );

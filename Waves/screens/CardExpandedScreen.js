@@ -3,8 +3,10 @@ import React from 'react';
 import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 import WaveCardCompact from '../components/WaveCardCompact';
 
-function CardExpandedScreen({item}) {
-
+function CardExpandedScreen({item, route}) {
+    if (route) {
+        item = route.params.item;
+    }
     return (
         <SafeAreaView style={styles.container}>
             <WaveCardCompact item={item} />
