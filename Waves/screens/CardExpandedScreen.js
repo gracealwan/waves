@@ -1,12 +1,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
-import CompactList from '../components/CompactList';
+import WaveCardCompact from '../components/WaveCardCompact';
 
-function FeedList({navigation}) {
+function CardExpandedScreen({item, route}) {
+    if (route) {
+        item = route.params.item;
+    }
     return (
         <SafeAreaView style={styles.container}>
-            <CompactList navigation={navigation} />
+            <WaveCardCompact item={item} />
+            <Text>Comments and stuff</Text>
         </SafeAreaView>
     );
 }
@@ -15,9 +19,9 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        
+        
     },
 });
 
-export default FeedList;
+export default CardExpandedScreen;
