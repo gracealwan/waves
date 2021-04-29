@@ -19,13 +19,14 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {NavigationContainer} from '@react-navigation/native';
 import ProfileNavScreen from './screens/ProfileNavScreen';
 import FeedScreen from './screens/FeedScreen';
+import HomeNavScreen from './screens/HomeNavScreen';
 const App = () => {
   // const isDarkMode = useColorScheme() === 'dark';
 
   const Tab = createMaterialTopTabNavigator();
   const HomeRoute = () => (
     <NavigationContainer independent={true}>
-      <HomeScreen />
+      <HomeNavScreen />
     </NavigationContainer>
   );
 
@@ -44,9 +45,9 @@ const App = () => {
       <NavigationContainer>
         <StatusBar barStyle={'dark-content'} />
         <Tab.Navigator tabBarPosition="bottom" initialRouteName="Home">
-          <Tab.Screen name="Feed" component={FeedRoute} />
-          <Tab.Screen name="Home" component={HomeRoute} />
-          <Tab.Screen name="Profile" component={ProfileRoute} />
+          <Tab.Screen name="Listen" component={FeedRoute} />
+          <Tab.Screen name="Record" component={HomeRoute} />
+          <Tab.Screen name="My Waves" component={ProfileRoute} />
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>

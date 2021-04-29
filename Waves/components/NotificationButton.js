@@ -10,7 +10,7 @@ import { LIGHT_GRAY, MED_GRAY, SECONDARY } from '../constants/theme';
 function NotificationButton({navigation}) {
     return (
         <Button
-            icon={() => <Icon name="bell" size={30} color={MED_GRAY} />}
+            icon={() => <Icon name="bell" size={30} color={"black"} />}
             onPress={() => navigation.push('Notifications')}
           />
     );

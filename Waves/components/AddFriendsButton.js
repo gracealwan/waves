@@ -9,7 +9,7 @@ import { MED_GRAY, SECONDARY } from '../constants/theme';
 function AddFriendsButton({navigation}) {
     return (
         <Button
-            icon={() => <Icon name="user-plus" size={30} color={MED_GRAY} />}
+            icon={() => <Icon name="user-plus" size={30} color={"black"} />}
             onPress={() => navigation.push('Add')}
           />
     );

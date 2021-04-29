@@ -7,14 +7,17 @@ const DATA = [
     {
       id: '1',
       title: 'First Item',
+      poster: 'Grace',
     },
     {
       id: '2',
       title: 'Second Item',
+      poster: 'Umar',
     },
     {
       id: '3',
       title: 'Third Item',
+      poster: 'Sam',
     },
   ];
 
