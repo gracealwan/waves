@@ -44,9 +44,9 @@ const App = () => {
       <NavigationContainer>
         <StatusBar barStyle={'dark-content'} />
         <Tab.Navigator tabBarPosition="bottom" initialRouteName="Home">
-          <Tab.Screen name="Feed" component={FeedRoute} />
-          <Tab.Screen name="Home" component={HomeRoute} />
-          <Tab.Screen name="Profile" component={ProfileRoute} />
+          <Tab.Screen name="Listen" component={FeedRoute} />
+          <Tab.Screen name="Record" component={HomeRoute} />
+          <Tab.Screen name="My Waves" component={ProfileRoute} />
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>
