@@ -17,17 +17,14 @@ function ProfileScreen({navigation}) {
       <View style={styles.container}>
         <View style={styles.topRow}>
           <AddFriendsButton navigation={navigation} />
-          <View style={styles.withinTopRow}>
-            <EditProfileButton navigation={navigation} />
-            <NotificationButton navigation={navigation} />
-          </View>
+          <EditProfileButton navigation={navigation} />
         </View>
-        <UserAvatar/>
+        <UserAvatar />
         <Text style={styles.name}>First Last 1</Text>
         <Text style={styles.username}>@username</Text>
         <ProfileInfoRow />
         <Divider style={styles.div} />
-        <CompactList navigation={navigation}/>
+        <CompactList navigation={navigation} />
       </View>
     </SafeAreaView>
   );
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: "white",
+    backgroundColor: 'white',
   },
   topRow: {
     display: 'flex',
