@@ -8,23 +8,26 @@ const DATA = [
       id: '1',
       title: 'First Item',
       poster: 'Grace',
+      private: true,
     },
     {
       id: '2',
       title: 'Second Item',
       poster: 'Umar',
+      private: false,
     },
     {
       id: '3',
       title: 'Third Item',
       poster: 'Sam',
+      private: true,
     },
   ];
 
-function CompactList({navigation}) {
+function CompactList({navigation, profile}) {
     const renderItem = ({item}) => {
         return (
-          <WaveCardCompact item={item} navigation={navigation} />
+          <WaveCardCompact item={item} navigation={navigation} profile={profile}/>
         );
       };
       return (

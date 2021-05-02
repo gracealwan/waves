@@ -27,7 +27,7 @@ function ProfileScreen({navigation}) {
         <Text style={styles.username}>@username</Text>
         <ProfileInfoRow />
         <Divider style={styles.div} />
-        <CompactList navigation={navigation}/>
+        <CompactList navigation={navigation} profile={true}/>
       </View>
     </SafeAreaView>
   );
