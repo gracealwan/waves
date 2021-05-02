@@ -20,6 +20,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import ProfileNavScreen from './screens/ProfileNavScreen';
 import FeedScreen from './screens/FeedScreen';
 import HomeNavScreen from './screens/HomeNavScreen';
+import AuthNavScreen from './screens/AuthNavScreen';
 const App = () => {
   // const isDarkMode = useColorScheme() === 'dark';
 
@@ -40,11 +41,17 @@ const App = () => {
       <FeedScreen />
     </NavigationContainer>
   );
+  const AuthRoute = () => (
+    <NavigationContainer independent={true}>
+      <AuthNavScreen />
+    </NavigationContainer>
+  );
   return (
     <PaperProvider>
       <NavigationContainer>
         <StatusBar barStyle={'dark-content'} />
         <Tab.Navigator tabBarPosition="bottom" initialRouteName="Home">
+          <Tab.Screen name="Auth" component={AuthRoute} />
           <Tab.Screen name="Listen" component={FeedRoute} />
           <Tab.Screen name="Record" component={HomeRoute} />
           <Tab.Screen name="My Waves" component={ProfileRoute} />
