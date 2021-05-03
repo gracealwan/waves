@@ -16,7 +16,7 @@ function ProfileNavScreen({navigation}) {
     <Stack.Navigator headerMode={'float'} >
       <Stack.Screen name="My Waves" component={ProfileScreen} />
       <Stack.Screen name="Notifications" component={Notifications} />
-      <Stack.Screen name="Edit" component={EditProfileScreen} />
+      <Stack.Screen name="Edit Profile" component={EditProfileScreen} />
       <Stack.Screen name="Add" component={AddFriendsScreen} />
       <Stack.Screen name="Wave" component={CardExpandedScreen} />
     </Stack.Navigator>
