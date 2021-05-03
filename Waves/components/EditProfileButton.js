@@ -11,7 +11,7 @@ function EditProfileButton({navigation}) {
           style={styles.button}
           mode="outlined"
           compact
-          onPress={() => navigation.push('Edit')}>
+          onPress={() => navigation.push('Edit Profile')}>
             <Text style={styles.inner}>Edit Profile</Text>
         </Button>
     );

@@ -6,7 +6,7 @@ import CompactList from '../components/CompactList';
 function FeedList({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
-            <CompactList navigation={navigation} />
+            <CompactList navigation={navigation} profile={false}/>
         </SafeAreaView>
     );
 }
