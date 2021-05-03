@@ -3,21 +3,20 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
 function ProfileDataItem({number, text}) {
-    return (
-      <View style={styles.box}>
-        <Text style={styles.number}>{number}</Text>
-        <Text style={styles.text}>{text}</Text>
-      </View>
-    );
-  }
+  return (
+    <View style={styles.box}>
+      <Text style={styles.number}>{number}</Text>
+      <Text style={styles.text}>{text}</Text>
+    </View>
+  );
+}
 
 function ProfileInfoRow() {
   return (
     <View style={styles.infoRow}>
-          <ProfileDataItem number={30} text={'Friends'} />
-          <ProfileDataItem number={4} text={'Recordings'} />
-          <ProfileDataItem number={300} text={'Listens'} />
-        </View>
+      <ProfileDataItem number={30} text={'Friends'} />
+      <ProfileDataItem number={4} text={'Recordings'} />
+    </View>
   );
 }
 
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: 120,
-    width: '100%',
+    width: '60%',
   },
   box: {
     display: 'flex',
@@ -38,12 +37,12 @@ const styles = StyleSheet.create({
   },
   number: {
     fontSize: 15,
-    fontWeight: "bold",
-    color: "black",
+    fontWeight: 'bold',
+    color: 'black',
   },
   text: {
     fontSize: 12,
-    color: "rgba(60, 60, 67, 0.6);",
+    color: 'rgba(60, 60, 67, 0.6);',
   },
 });
 export default ProfileInfoRow;
