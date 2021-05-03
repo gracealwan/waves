@@ -6,12 +6,12 @@ import { TabRouter } from '@react-navigation/routers';
 import UserAvatar from './UserAvatar';
 import CardInfo from './CardInfo';
 
-function WaveCardCompact({item, navigation}) {
+function WaveCardCompact({item, navigation, profile}) {
   return (
-    <Card style={styles.card} onPress={() => navigation?.push("Wave", {item: item})}>
+    <Card style={styles.card} onPress={() => navigation?.push("Wave", {item: item, profile: profile})}>
       <Card.Content style={styles.content}>
         <UserAvatar size='small' style={styles.avatar}/>
-        <CardInfo item={item}/>
+        <CardInfo item={item} profile={profile}/>
       </Card.Content>
     </Card>
   );

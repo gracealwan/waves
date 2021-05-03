@@ -6,15 +6,17 @@ import {Button} from 'react-native-paper';
 import {DARK_GRAY, LIGHT_GRAY, MED_GRAY} from '../constants/theme';
 
 function EditProfileButton({navigation}) {
-  return (
-    <Button
-      style={styles.button}
-      mode="outlined"
-      uppercase={false}
-      onPress={() => navigation.push('Edit')}>
-      <Text style={styles.inner}>Edit Profile</Text>
-    </Button>
-  );
+
+    return (
+        <Button
+          style={styles.button}
+          mode="outlined"
+          compact
+          uppercase={false}
+          onPress={() => navigation.push('Edit Profile')}>
+            <Text style={styles.inner}>Edit Profile</Text>
+        </Button>
+    );
 }
 
 const styles = StyleSheet.create({
