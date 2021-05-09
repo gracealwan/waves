@@ -5,10 +5,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {Button} from 'react-native-paper';
 import { PRIMARY, WHITE } from '../constants/theme';
 
-function RecordButton() {
+function RecordButton(props) {
   return (
 
-      <Button mode="contained" style={styles.button} onLongPress={() => console.log('record')}>
+      <Button mode="contained" style={styles.button}>
         <Icon name="microphone" color={WHITE} size={100} />
       </Button>
 
