@@ -12,7 +12,6 @@ import ProcessScreen from './ProcessScreen';
 
 const Stack = createStackNavigator();
 
-
 function HomeNavScreen({navigation}) {
   return (
     <Stack.Navigator headerMode={'none'} >
