@@ -33,13 +33,11 @@ class HomeScreen extends React.Component  {
       filePath: "",
     };
     this.audioRecorderPlayer = new AudioRecorderPlayer();
-    //this.audioRecorderPlayer.setSubscriptionDuration(0.1);
   }
 
   onStartRecord = async () => {
     console.log("on start got triggered")
     var date = new Date();
-    console.log(date);
     const path = 'sound'+date.getTime()+'.m4a';
     const audioSet = {
       AudioEncoderAndroid: AudioEncoderAndroidType.AAC,
@@ -49,9 +47,7 @@ class HomeScreen extends React.Component  {
       AVFormatIDKeyIOS: AVEncodingOption.aac,
     };
     const uri = await this.audioRecorderPlayer.startRecorder(path, audioSet);
-    console.log(uri)
     this.audioRecorderPlayer.addRecordBackListener((e) => {
-      console.log(e);
       this.setState({
         recordSecs: e.currentPosition,
         recordTime: this.audioRecorderPlayer.mmssss(
@@ -61,7 +57,6 @@ class HomeScreen extends React.Component  {
         filePath: path,
       });
     });
-    //console.log(`uri: ${uri}`);
   };
 
   onStopRecord = async () => {
@@ -71,54 +66,18 @@ class HomeScreen extends React.Component  {
     this.setState({
       recordSecs: 0
     });
+
     //console.log('result',result);
-    //console.log('audioURI', this.state.audioURI);
-    //this.props.navigation.push("Process");
-    //console.log('audioURI', this.state.audioURI);
+    console.log('audioURI', this.state.audioURI);
+    this.props.navigation.navigate('Process', {
+      filePath: this.state.filePath,
+      playTime: this.state.playTime,
+      duration: this.state.duration,
+      recordTime: this.state.recordTime,
+      currentPositionSec: this.state.currentPositionSec,
+      currentDurationSec: this.state.currentDurationSec,
+    })
   };
-
-  
-  onStartPlay = async() => {
-    console.log('onStartPlay');
-    const msg = await this.audioRecorderPlayer.startPlayer(this.state.filePath);
-    this.audioRecorderPlayer.setVolume(1.0);
-    console.log(msg);
-    this.audioRecorderPlayer.addPlayBackListener((e) => {
-      if (e.currentPosition === e.duration) {
-      //if (e.current_position === e.duration) {
-        console.log('finished');
-        this.audioRecorderPlayer.stopPlayer();
-      }
-      this.setState({
-        currentPositionSec: e.currentPosition,
-        currentDurationSec: e.duration,
-        playTime: this.audioRecorderPlayer.mmssss(
-          Math.floor(e.currentPosition),
-        ),
-        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
-      });
-    });
-  };
-
-  /*
-  onStartPlay = async () => {
-    console.log('onStartPlay', this.state.filePath);
-    const msg = await this.audioRecorderPlayer.startPlayer(this.state.filePath);
-    console.log("msg",msg);
-    this.audioRecorderPlayer.addPlayBackListener((e) => {
-      console.log(e);
-      this.setState({
-        currentPositionSec: e.currentPosition,
-        currentDurationSec: e.duration,
-        playTime: this.audioRecorderPlayer.mmssss(Math.floor(e.currentPosition)),
-        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration))
-        //duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
-      });
-      return;
-    });
-    console.log(this.audioRecorderPlayer)
-    setTimeout(() => console.log(this.audioRecorderPlayer), 5000)
-  };*/
 
   render () {
     return (
@@ -131,12 +90,6 @@ class HomeScreen extends React.Component  {
           <RecordButton />
         </TouchableOpacity>
         <Text style={styles.text}>Hold to start recording</Text>
-        <TouchableOpacity
-          activeOpacity={0.6}
-          onPress={this.onStartPlay}>
-          <PlayAudioButton />
-        </TouchableOpacity>
-        <Text>{this.state.playTime} / {this.state.duration}</Text>
       </SafeAreaView>
     );
   }
