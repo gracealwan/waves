@@ -71,8 +71,8 @@ class HomeScreen extends React.Component  {
     this.setState({
       recordSecs: 0
     });
-    console.log('result',result);
-    console.log('audioURI', this.state.audioURI);
+    //console.log('result',result);
+    //console.log('audioURI', this.state.audioURI);
     //this.props.navigation.push("Process");
     //console.log('audioURI', this.state.audioURI);
   };
@@ -127,7 +127,7 @@ class HomeScreen extends React.Component  {
         <TouchableOpacity
           activeOpacity={0.6}
           onPressIn={this.onStartRecord.bind(this)}
-          onPressOut={this.onStopRecord}>
+          onPressOut={this.onStopRecord.bind(this)}>
           <RecordButton />
         </TouchableOpacity>
         <Text style={styles.text}>Hold to start recording</Text>
