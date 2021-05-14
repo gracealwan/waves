@@ -86,5 +86,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Give Waves permission to use your microphone. Your record wont be shared without your permission.</string>
 </dict>
 </plist>
